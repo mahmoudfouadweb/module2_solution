@@ -1,0 +1,113 @@
+body {
+  height: 100vh;
+  font-family: "Zen Loop", cursive;
+  font-size: 100%;
+  background-color: blanchedalmond;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 100px auto auto;
+  grid-template-areas:
+    " h1 h1 h1 h1 h1 h1"
+    " beef beef sushi sushi chicken chicken";
+  row-gap: 3%;
+}
+
+h1 {
+  grid-area: h1;
+  text-align: center;
+  font-size: 175%;
+}
+
+section {
+  border: 1px black solid;
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  background-color: rgba(37, 73, 139, 0.603);
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+#section1 {
+  grid-area: chicken;
+}
+
+#section2 {
+  grid-area: beef;
+}
+
+#section3 {
+  grid-area: sushi;
+}
+
+div {
+  position: relative;
+  width: 100px;
+  float: right;
+  border: 1px solid black;
+}
+
+section #div1 {
+  background-color: brown;
+}
+
+section #div2 {
+  background-color: yellowgreen;
+}
+
+section #div3 {
+  background-color: teal;
+}
+
+p {
+  clear: right;
+  padding: 0 15px;
+  text-align: left;
+}
+
+/* mobile view */
+
+@media (max-width: 767px) {
+  .main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px auto auto auto;
+    grid-template-areas:
+      " h1 h1 h1 h1 h1 h1"
+      " beef beef beef beef beef beef "
+      "sushi sushi sushi sushi sushi sushi "
+      "chicken chicken chicken chicken chicken chicken";
+    row-gap: 7%;
+  }
+}
+
+/* tablet view */
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .main {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 100px auto auto;
+    grid-template-areas:
+      " h1 h1 h1 h1 h1 h1"
+      " beef beef beef sushi sushi sushi "
+      "chicken chicken chicken chicken chicken chicken";
+    row-gap: 7%;
+  }
+}
+
+/* desktop view */
+
+@media (min-width: 992px) {
+  .main {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 100px auto auto;
+    grid-template-areas:
+      " h1 h1 h1 h1 h1 h1"
+      " beef beef sushi sushi chicken chicken";
+  }
+}
